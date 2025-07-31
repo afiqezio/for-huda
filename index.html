@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy National Girlfriend Day, My Huda</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #f0fdf4 50%, #fef7ed 100%);
+            color: #374151;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts animation */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #fecaca;
+            font-size: 1rem;
+            animation: float 8s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(252, 231, 243, 0.3), transparent);
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: #be185d;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(190, 24, 93, 0.1);
+        }
+
+        .hero .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #059669;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero .date {
+            font-size: 1.1rem;
+            color: #d97706;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        /* Floral Divider */
+        .floral-divider {
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .floral-divider::before,
+        .floral-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #fecaca, transparent);
+        }
+
+        .floral-divider::before { left: 10%; }
+        .floral-divider::after { right: 10%; }
+
+        .floral-divider i {
+            font-size: 2rem;
+            color: #fecaca;
+            background: linear-gradient(135deg, #fdf2f8, #f0fdf4);
+            padding: 1rem;
+            border-radius: 50%;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #be185d;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #fecaca, #d97706, #fecaca);
+            border-radius: 2px;
+        }
+
+        /* Photo Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .photo-frame {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(190, 24, 93, 0.1);
+            transform: rotate(-2deg);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-frame:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 20px 50px rgba(190, 24, 93, 0.2);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #fecaca, #fed7d7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #be185d;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .photo-caption {
+            text-align: center;
+            font-style: italic;
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        /* Love Letter Section */
+        .love-letter {
+            background: white;
+            margin: 4rem auto;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(190, 24, 93, 0.1);
+            position: relative;
+            max-width: 800px;
+        }
+
+        .love-letter::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #fecaca, #fed7d7, #fde68a, #d1fae5);
+            border-radius: 25px;
+            z-index: -1;
+        }
+
+        .letter-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .letter-greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #be185d;
+            margin-bottom: 2rem;
+        }
+
+        .letter-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #be185d;
+            text-align: right;
+            margin-top: 2rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to bottom, #fecaca, #d97706);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 2rem 0;
+            position: relative;
+            width: 50%;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(190, 24, 93, 0.1);
+            position: relative;
+        }
+
+        .timeline-date {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #be185d;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-event {
+            font-size: 1.1rem;
+            color: #374151;
+        }
+
+        .timeline-item::after {
+            content: '♥';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: white;
+            border: 3px solid #fecaca;
+            top: 2.5rem;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #be185d;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        /* Hero Image Section */
+        .hero-image-section {
+            background: linear-gradient(135deg, rgba(252, 231, 243, 0.5), rgba(240, 253, 244, 0.5));
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-image-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-image-frame {
+            background: white;
+            padding: 2rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(190, 24, 93, 0.15);
+            transform: rotate(-1deg);
+            transition: all 0.5s ease;
+        }
+
+        .hero-image-frame:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 0 30px 80px rgba(190, 24, 93, 0.25);
+        }
+
+        .large-photo {
+            height: 400px !important;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #be185d;
+            margin-top: 1rem;
+        }
+
+        /* Couple Photos Section */
+        .couple-section {
+            background: white;
+            padding: 6rem 2rem;
+        }
+
+        .couple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .couple-frame {
+            background: linear-gradient(135deg, #fdf2f8, #f0fdf4);
+            padding: 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(190, 24, 93, 0.1);
+            transform: rotate(1deg);
+            transition: all 0.4s ease;
+        }
+
+        .couple-frame:nth-child(even) {
+            transform: rotate(-1deg);
+        }
+
+        .couple-frame:hover {
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 0 15px 40px rgba(190, 24, 93, 0.2);
+        }
+
+        .couple-frame .photo-placeholder {
+            height: 200px;
+            border-radius: 15px;
+        }
+
+        /* Memories Collage */
+        .memories-collage {
+            background: linear-gradient(135deg, #fef7ed, #fdf2f8);
+            padding: 6rem 2rem;
+        }
+
+        .collage-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            grid-auto-rows: 200px;
+        }
+
+        .collage-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1rem;
+            box-shadow: 0 5px 20px rgba(190, 24, 93, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(190, 24, 93, 0.2);
+            z-index: 5;
+        }
+
+        .collage-item:nth-child(1) { transform: rotate(2deg); }
+        .collage-item:nth-child(2) { transform: rotate(-1deg); }
+        .collage-item:nth-child(3) { transform: rotate(1deg); }
+        .collage-item:nth-child(4) { transform: rotate(-2deg); }
+        .collage-item:nth-child(5) { transform: rotate(1.5deg); }
+        .collage-item:nth-child(6) { transform: rotate(-0.5deg); }
+
+        .collage-item .photo-placeholder {
+            height: calc(100% - 2rem);
+            margin-bottom: 0.5rem;
+            border-radius: 15px;
+        }
+
+        .collage-caption {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        /* Featured Photo Section */
+        .featured-photo {
+            padding: 6rem 2rem;
+            background: radial-gradient(circle at center, rgba(252, 231, 243, 0.3), transparent);
+        }
+
+        .featured-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .featured-frame {
+            background: white;
+            padding: 3rem;
+            border-radius: 40px;
+            box-shadow: 0 25px 70px rgba(190, 24, 93, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-frame::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #fecaca, #fde68a, #d1fae5, #ddd6fe);
+            border-radius: 45px;
+            z-index: -1;
+        }
+
+        .featured-frame .photo-placeholder {
+            height: 350px;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .love-letter {
+                margin: 2rem 1rem;
+                padding: 2rem;
+            }
+        }
+
+        /* Candle Animation */
+        .candle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+            opacity: 0.7;
+        }
+
+        .candle-flame {
+            width: 20px;
+            height: 25px;
+            background: radial-gradient(circle, #ffd700 30%, #ff6b35 70%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 2s ease-in-out infinite alternate;
+        }
+
+        .candle-body {
+            width: 15px;
+            height: 40px;
+            background: #fecaca;
+            margin: 0 auto;
+            border-radius: 0 0 10px 10px;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-1deg); }
+            100% { transform: scale(1.1) rotate(1deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" id="hearts"></div>
+
+    <!-- Animated Candle -->
+    <div class="candle">
+        <div class="candle-flame"></div>
+        <div class="candle-body"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Happy National Girlfriend Day</h1>
+            <p class="subtitle">My Huda 💕</p>
+            <p class="date">August 1st, 2025</p>
+        </div>
+    </section>
+
+    <!-- Floral Divider -->
+    <div class="floral-divider">
+        <i class="fas fa-heart"></i>
+    </div>
+
+            <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title">Our Beautiful Moments</h2>
+        <div class="gallery">
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_5483.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Her beautiful smile that lights up my world</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_4567.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Our first museum date together</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/RayaPic.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Her first ever Raya pic for me!</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_4869.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Our most expensive date together (Valet parking gangg)</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_4656.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Her first nail done with me!</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_4545.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Go for a jog and ending up here</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/DSC06928.JPEG" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Someone got a bouquet of flowers!</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_3688.jpeg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Got her the first flower!!</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_5577.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Someone guessed gender reveal right and won a lucky draw!</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_5613.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Isn't this the most stunning woman you'll ever see 😍😍😍</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_9487.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">DAMNNN look at this beauty!!</p>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_5650.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Her last day in Damansara😭😭</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Image Section -->
+    <section class="hero-image-section">
+        <h2 class="section-title">You Are My Everything</h2>
+        <div class="hero-image-container">
+            <div class="hero-image-frame">
+                <div class="photo-placeholder large-photo">
+                    <img src="images/20250218_123019876.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption hero-caption">My baby, my love, my everything</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floral Divider -->
+    <div class="floral-divider">
+        <i class="fas fa-rose"></i>
+    </div>
+
+    <!-- Couple Photos Section -->
+    <section class="couple-section">
+        <h2 class="section-title">Us Together</h2>
+        <div class="couple-grid">
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/DSC07022.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Are we marriedd?</p>
+            </div>
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_1178.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Someone got a swimming lessonn</p>
+            </div>
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_4856.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">THE WAGYU SO SEDAPPPPP</p>
+            </div>
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_4993.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Got Covid but both of us are clingy</p>
+            </div>
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_5452.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Bingsu shedappp</p>
+            </div>
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_7384.JPEG" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Lowkey the best picture of uss</p>
+            </div>
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_5585.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Promised we never hugged in the picturee</p>
+            </div>
+            <div class="couple-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_0925.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <p class="photo-caption">Our first wedding together🥰</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floral Divider -->
+    <div class="floral-divider">
+        <i class="fas fa-leaf"></i>
+    </div>
+
+    <!-- Featured Photo Section -->
+    <section class="featured-photo">
+        <h2 class="section-title">My Favorite Photo of You</h2>
+        <div class="featured-container">
+            <div class="featured-frame">
+                <div class="photo-placeholder">
+                    <img src="images/IMG_4770.jpg" style="width: 100%; height: 100%; object-fit: cover; object-position: center 70%; border-radius: 15px;">
+                </div>
+                <div class="featured-quote">"Not a typical selfie or OOTD, but a photo that holds a memory of her quirky, unforgettable charm."</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floral Divider -->
+    <div class="floral-divider">
+        <i class="fas fa-heart"></i>
+    </div>
+
+    <!-- Love Letter Section -->
+    <section>
+        <h2 class="section-title">A Letter From My Heart</h2>
+        <div class="love-letter">
+            <div class="letter-greeting">My Dearest Love,</div>
+                <div class="letter-content">
+                    <p>Ever since you chose me, my world has felt more whole. You’re the spark in my laughter, the calm in my storms, and the joy in every ordinary moment we share.</p>
+        
+                    <p>I’m endlessly grateful that you found me and decided to be by my side. You complete me in ways I never imagined, and with you every moment is an adventure filled with your sweet, playful spirit.</p>
+                    
+                    <p>Thank you for believing in us, for turning my worst jokes into our best memories, and for making my heart feel at home. Being with you is my favorite place to be.</p>
+                    
+                    <p>I look forward to a lifetime of fun, growth, and love through every chapter until we wear a ring and all the way to our last breath.</p>
+                </div>
+            <div class="letter-signature">Forever yours, Afiq♡</div>
+        </div>
+    </section>
+
+    <!-- Floral Divider -->
+    <div class="floral-divider">
+        <i class="fas fa-seedling"></i>
+    </div>
+
+    <!-- Timeline Section -->
+    <!-- <section>
+        <h2 class="section-title">Our Love Story</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">The Beginning</div>
+                    <div class="timeline-event">The day we first met and I knew you were special</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">First Date</div>
+                    <div class="timeline-event">That magical evening when everything just felt right</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Official</div>
+                    <div class="timeline-event">The moment you said yes to being my girlfriend</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Growing Together</div>
+                    <div class="timeline-event">Every adventure, laugh, and memory we've shared since</div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Today & Always</div>
+                    <div class="timeline-event">Celebrating our love and looking forward to our future</div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '♥';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            document.getElementById('hearts').appendChild(heart);
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 3000);
+
+        // Initial hearts
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 1000);
+        }
+
+        // Smooth scroll animation for timeline items
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(50px)';
+            item.style.transition = 'all 0.8s ease-out';
+            observer.observe(item);
+        });
+
+        // Add gentle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

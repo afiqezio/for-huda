@@ -118,7 +118,7 @@ const ValentinesDay: React.FC = () => {
                 <img src={heroImage} className="w-full h-full object-cover" alt="Us" />
               </div>
               <h3 className="font-romantic text-3xl text-rose-400 mb-2">"{subTitle}"</h3>
-              <p className="text-rose-200/50 text-sm mb-8 italic">Valentine's Day 2025</p>
+              <p className="text-rose-200/50 text-sm mb-8 italic">Valentine's Day 2026</p>
               
               <div className="flex gap-4">
                 <a 

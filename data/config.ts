@@ -35,7 +35,7 @@ export const GIRLFRIEND_DAY_DATA = {
 export const VALENTINE_DAY_DATA = {
   title: "Will you be my Valentine?",
   subTitle: "I love you most",
-  date: "February 14, 2025",
+  date: "February 14, 2026",
   relationshipNotes: `Name: Nurul Huda Binti Abdul Hadi
 Official date: 15/2
 

@@ -1,7 +1,8 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import FloatingHearts from '../components/FloatingHearts';
-import { Heart, Music, Sparkles, MapPin, ScrollText, ChevronDown } from 'lucide-react';
+import { Heart, Music, ScrollText, ChevronDown, ArrowLeft } from 'lucide-react';
 import { VALENTINE_DAY_DATA } from '../data/config';
 
 const ValentinesDay: React.FC = () => {
@@ -18,10 +19,8 @@ const ValentinesDay: React.FC = () => {
   };
 
   const moveNoButton = (e: React.MouseEvent | React.TouchEvent) => {
-    // Avoid default behavior to prevent double trigger on mobile
     if (e.type === 'touchstart') e.preventDefault();
-    
-    const randomX = Math.random() * 70 + 15; // Keep away from edges
+    const randomX = Math.random() * 70 + 15;
     const randomY = Math.random() * 70 + 15;
     setNoPos({
       left: `${randomX}%`,
@@ -34,6 +33,11 @@ const ValentinesDay: React.FC = () => {
     <div className="relative min-h-screen bg-[#120505] text-rose-50 overflow-x-hidden selection:bg-rose-500/30">
       <FloatingHearts color="text-rose-900" />
       
+      {/* Back Button */}
+      <Link to="/" className="fixed top-6 left-6 z-50 p-3 bg-rose-950/80 backdrop-blur border border-rose-800/30 shadow-lg rounded-full text-rose-400 hover:scale-110 active:scale-95 transition-all">
+        <ArrowLeft size={20} />
+      </Link>
+
       {/* Ambience */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-rose-900/10 rounded-full blur-[100px]" />

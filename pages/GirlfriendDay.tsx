@@ -1,7 +1,8 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FloatingHearts from '../components/FloatingHearts';
-import { Camera, Heart, Mail, Calendar, Quote, ChevronDown } from 'lucide-react';
+import { Camera, Heart, Mail, Calendar, Quote, ChevronDown, ArrowLeft } from 'lucide-react';
 import { GIRLFRIEND_DAY_DATA } from '../data/config';
 
 const GalleryItem: React.FC<{ src: string; caption: string; rotation: string }> = ({ src, caption, rotation }) => (
@@ -25,6 +26,11 @@ const GirlfriendDay: React.FC = () => {
     <div className="relative min-h-screen bg-gradient-to-br from-rose-50 via-white to-teal-50 pb-32">
       <FloatingHearts />
       
+      {/* Back Button */}
+      <Link to="/" className="fixed top-6 left-6 z-50 p-3 bg-white/80 backdrop-blur shadow-lg rounded-full text-pink-600 hover:scale-110 active:scale-95 transition-all">
+        <ArrowLeft size={20} />
+      </Link>
+
       {/* Hero */}
       <header className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">

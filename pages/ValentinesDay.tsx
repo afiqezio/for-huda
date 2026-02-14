@@ -118,7 +118,7 @@ const ValentinesDay: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-romantic text-4xl text-rose-400">"{subTitle}"</h3>
-                <p className="text-rose-100/60 mt-3 max-w-sm">Every breath I take is a silent thank you for you being in my life.</p>
+                <p className="text-rose-100/60 mt-3 max-w-sm">I could never imagine my life without you sayang.</p>
               </div>
               <div className="flex gap-6 pt-4">
                 <a 
@@ -131,7 +131,6 @@ const ValentinesDay: React.FC = () => {
                   <Music className="text-rose-500 hover:text-white" />
                 </a>
               </div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-rose-500/50 font-bold">Listen to our song</p>
             </div>
           </section>
 

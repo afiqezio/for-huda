@@ -1,6 +1,6 @@
 
 /**
- * Configuration for Romantic Celebrations
+ * Configuration for HA Hub
  * Update this file to change images, captions, and text content across the site.
  */
 
@@ -36,9 +36,7 @@ export const VALENTINE_DAY_DATA = {
   title: "Will you be my Valentine?",
   subTitle: "I love you most",
   date: "February 14, 2025",
-  relationshipNotes: `My Pwincess
-
-Name: Nurul Huda Binti Abdul Hadi
+  relationshipNotes: `Name: Nurul Huda Binti Abdul Hadi
 Official date: 15/2
 
 🎀 Her Vibe & Personality
@@ -133,6 +131,12 @@ Official date: 15/2
     'https://res.cloudinary.com/dtl72yrin/image/upload/v1771044043/IMG_7801_bp77gh.jpg',
     'https://res.cloudinary.com/dtl72yrin/image/upload/v1771044043/IMG_8142_dhsayc.jpg',
     'https://res.cloudinary.com/dtl72yrin/image/upload/v1771044041/IMG_8205_wxqpbb.jpg',
+    'https://res.cloudinary.com/dtl72yrin/image/upload/v1771050247/IMG_3804_lshbad.jpg',
+    'https://res.cloudinary.com/dtl72yrin/image/upload/v1771050144/IMG_6700_yw4o30.jpg',
+    'https://res.cloudinary.com/dtl72yrin/image/upload/v1771050140/IMG_8242_xcmbo9.jpg',
+    'https://res.cloudinary.com/dtl72yrin/image/upload/v1771050141/IMG_6721_h7naft.jpg',
+    'https://res.cloudinary.com/dtl72yrin/image/upload/v1771050246/IMG_3725_bvvjto.jpg',
+    'https://res.cloudinary.com/dtl72yrin/image/upload/v1771044040/IMG_6944_qa8edt.jpg',
   ],
   signature: "Love always, Afiq"
 };

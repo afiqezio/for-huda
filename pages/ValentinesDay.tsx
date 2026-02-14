@@ -61,7 +61,7 @@ const ValentinesDay: React.FC = () => {
 
           {response === 'YES' && (
             <div className="animate-in fade-in slide-in-from-top-4 duration-700 mt-12">
-              <p className="font-romantic text-4xl text-rose-400">I knew you'd say yes! 🌹</p>
+              <p className="font-romantic text-4xl text-rose-400">I knew you'd say yes! hehe</p>
               <p className="text-rose-300/50 mt-2 text-sm animate-pulse">Scroll down to see what I've been keeping for you...</p>
             </div>
           )}

@@ -1,8 +1,8 @@
-# 💖 For Huda's Hub
+# :sparkling_heart: For Huda's Hub
 
 A sophisticated, mobile-responsive web application designed as a "Love Archive" for Huda. This system serves as a centralized portal (Catalogue) for various romantic milestones.
 
-## 🏗️ Architecture
+## :construction_site: Architecture
 
 The system is built with a modern, high-performance frontend stack optimized for seamless user experiences and rapid deployment.
 
@@ -19,7 +19,7 @@ The system is built with a modern, high-performance frontend stack optimized for
 - **Component-Based UI**: Reusable components like `FloatingHearts` and `EventCard` ensure visual consistency.
 - **Glassmorphism**: Extensive use of backdrop-blur and translucency for a premium "app-like" feel.
 
-## ✨ Key Features
+## :sparkles: Key Features
 
 ### 1. The Love Archive (Catalogue)
 A portal acting as a museum-style entry point. Features high-impact cards with hover/touch effects to direct the user to specific celebration pages.
@@ -39,7 +39,7 @@ A portal acting as a museum-style entry point. Features high-impact cards with h
 - **Responsive Typography**: Fluid font scaling across mobile, tablet, and desktop.
 - **Navigation**: Dedicated back-navigation on every sub-page to return to the Catalogue.
 
-## 🛠️ Development
+## :tools: Development
 
 ### Prerequisites
 - Node.js (v20 or higher)
@@ -63,7 +63,7 @@ A portal acting as a museum-style entry point. Features high-impact cards with h
 ### Customizing Content
 To update photos or text for Huda, modify only the `data/config.ts` file. The UI will automatically adapt to the new content.
 
-## 🚀 Deployment
+## :rocket: Deployment
 
 The system is configured for **Continuous Deployment (CD)** via GitHub Actions.
 
@@ -80,4 +80,4 @@ To enable the site, you must perform this step on GitHub:
 3. Under **Build and deployment > Source**, select **GitHub Actions** from the dropdown.
 
 ---
-*Created with love by Afiq.*
+*Created by Afiq.*

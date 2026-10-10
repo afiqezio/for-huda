@@ -7,6 +7,10 @@ const WIDTHS = [400, 800, 1200];
 const cloudinaryUrl = (src: string, width: number) =>
   src.replace(UPLOAD_SEGMENT, `${UPLOAD_SEGMENT}f_auto,q_auto,c_limit,w_${width}/`);
 
+// Crops on the server to the exact frame shape, centred on the subject, without upscaling past the original.
+export const cloudinaryFillUrl = (src: string, width: number, height: number) =>
+  src.replace(UPLOAD_SEGMENT, `${UPLOAD_SEGMENT}f_auto,q_auto,c_lfill,g_auto,w_${width},h_${height}/`);
+
 interface PhotoProps {
   src: string;
   sizes: string;

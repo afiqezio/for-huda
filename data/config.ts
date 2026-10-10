@@ -181,3 +181,93 @@ export const VALENTINE_DAY_DATA = {
   ],
   signature: "Love always, Afiq"
 };
+
+const CLOUDINARY = 'https://res.cloudinary.com/dtl72yrin/image/upload/';
+
+// Set a photo to '' to show an empty frame. Cloudinary URLs get resized automatically.
+export const BIRTHDAY_DATA = {
+  chapter: "Chapter III",
+  date: "21 October 2026",
+  // Midnight 21 October in Malaysia (UTC+8), the same instant for every visitor whatever their phone's timezone.
+  unlockAt: Date.parse('2026-10-21T00:00:00+08:00'),
+  // Development switch: opens the chapter before unlockAt. Keep false on the live site.
+  forceUnlock: false,
+  coverPhoto: CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_6_bgzdp0.jpg',
+  openingPhoto: CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_2_we7re0.jpg',
+  tagline: "Cry baby, sushi maniac, Thai girl wannabe and the main character of every single one of my days.",
+  starPhotos: [
+    CLOUDINARY + 'v1791633521/WhatsApp_Image_2026-10-10_at_7.55.45_PM_7_dmmuan.jpg',
+    CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_6_bgzdp0.jpg',
+    CLOUDINARY + 'v1791633515/WhatsApp_Image_2026-10-10_at_7.55.47_PM_rybwzh.jpg',
+  ],
+  months: [
+    { name: 'January', src: CLOUDINARY + 'v1791633519/WhatsApp_Image_2026-10-10_at_7.55.44_PM_11_gorsjw.jpg' },
+    { name: 'February', src: CLOUDINARY + 'v1791633519/WhatsApp_Image_2026-10-10_at_7.55.44_PM_14_robtow.jpg' },
+    { name: 'March', src: CLOUDINARY + 'v1791633520/WhatsApp_Image_2026-10-10_at_7.55.45_PM_3_ulbjc2.jpg' },
+    { name: 'April', src: CLOUDINARY + 'v1791633512/WhatsApp_Image_2026-10-10_at_7.55.45_PM_9_lqxsox.jpg' },
+    { name: 'May', src: CLOUDINARY + 'v1791634898/WhatsApp_Image_2026-10-10_at_8.13.34_PM_cqxgq1.jpg' },
+    { name: 'June', src: CLOUDINARY + 'v1791633516/WhatsApp_Image_2026-10-10_at_7.55.46_PM_3_aphlqv.jpg' },
+    { name: 'July', src: CLOUDINARY + 'v1791633516/WhatsApp_Image_2026-10-10_at_7.55.46_PM_6_tkvkrv.jpg' },
+    { name: 'August', src: CLOUDINARY + 'v1791633514/WhatsApp_Image_2026-10-10_at_7.55.46_PM_13_tkdff3.jpg' },
+    { name: 'September', src: CLOUDINARY + 'v1791633514/WhatsApp_Image_2026-10-10_at_7.55.46_PM_14_wi2gp5.jpg' },
+    { name: 'October', src: CLOUDINARY + 'v1791634899/WhatsApp_Image_2026-10-10_at_8.21.11_PM_tkjyti.jpg' },
+    { name: 'November', src: CLOUDINARY + 'v1791633517/WhatsApp_Image_2026-10-10_at_7.55.44_PM_3_vktlke.jpg' },
+    { name: 'December', src: CLOUDINARY + 'v1791633519/WhatsApp_Image_2026-10-10_at_7.55.44_PM_9_idf5pq.jpg' },
+  ],
+  everyVersion: [
+    CLOUDINARY + 'v1791633520/WhatsApp_Image_2026-10-10_at_7.55.45_PM_1_smak6s.jpg',
+    CLOUDINARY + 'v1791633516/WhatsApp_Image_2026-10-10_at_7.55.46_PM_7_kfugcv.jpg',
+    CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_8_iqvppm.jpg',
+    CLOUDINARY + 'v1791633522/WhatsApp_Image_2026-10-10_at_7.55.44_PM_12_jrk4tu.jpg',
+    CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_5_zefryl.jpg',
+    CLOUDINARY + 'v1791633517/WhatsApp_Image_2026-10-10_at_7.55.46_PM_9_vmhzgz.jpg',
+    CLOUDINARY + 'v1791633515/WhatsApp_Image_2026-10-10_at_7.55.46_PM_4_qecnqy.jpg',
+    CLOUDINARY + 'v1791633513/WhatsApp_Image_2026-10-10_at_7.55.45_PM_8_e2eftk.jpg',
+    CLOUDINARY + 'v1791633513/WhatsApp_Image_2026-10-10_at_7.55.45_PM_11_zsf3vo.jpg',
+    CLOUDINARY + 'v1791633520/WhatsApp_Image_2026-10-10_at_7.55.45_PM_5_rtcu8o.jpg',
+    CLOUDINARY + 'v1791633513/WhatsApp_Image_2026-10-10_at_7.55.46_PM_11_f8tq6q.jpg',
+    CLOUDINARY + 'v1791633516/WhatsApp_Image_2026-10-10_at_7.55.41_PM_1_pwjh33.jpg',
+  ],
+  // Every photo not used above, so the whole year makes it onto the page.
+  gallery: [
+    CLOUDINARY + 'v1791633519/WhatsApp_Image_2026-10-10_at_7.55.44_PM_13_j1ome7.jpg',
+    CLOUDINARY + 'v1791633521/WhatsApp_Image_2026-10-10_at_7.55.45_PM_gth8va.jpg',
+    CLOUDINARY + 'v1791633520/WhatsApp_Image_2026-10-10_at_7.55.45_PM_4_aocmlv.jpg',
+    CLOUDINARY + 'v1791633520/WhatsApp_Image_2026-10-10_at_7.55.45_PM_2_p2oymj.jpg',
+    CLOUDINARY + 'v1791633520/WhatsApp_Image_2026-10-10_at_7.55.45_PM_6_fjl8gc.jpg',
+    CLOUDINARY + 'v1791633513/WhatsApp_Image_2026-10-10_at_7.55.45_PM_10_b9eqos.jpg',
+    CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.45_PM_13_xeaqim.jpg',
+    CLOUDINARY + 'v1791633514/WhatsApp_Image_2026-10-10_at_7.55.46_PM_p2lkw3.jpg',
+    CLOUDINARY + 'v1791633514/WhatsApp_Image_2026-10-10_at_7.55.46_PM_1_hftzwm.jpg',
+    CLOUDINARY + 'v1791633515/WhatsApp_Image_2026-10-10_at_7.55.46_PM_2_h5tflm.jpg',
+    CLOUDINARY + 'v1791633516/WhatsApp_Image_2026-10-10_at_7.55.46_PM_5_kgivb9.jpg',
+    CLOUDINARY + 'v1791633517/WhatsApp_Image_2026-10-10_at_7.55.46_PM_8_kgpzea.jpg',
+    CLOUDINARY + 'v1791633513/WhatsApp_Image_2026-10-10_at_7.55.46_PM_10_uzkcss.jpg',
+    CLOUDINARY + 'v1791633513/WhatsApp_Image_2026-10-10_at_7.55.46_PM_12_n4qg66.jpg',
+    CLOUDINARY + 'v1791633515/WhatsApp_Image_2026-10-10_at_7.55.47_PM_1_jq5gya.jpg',
+    CLOUDINARY + 'v1791633515/WhatsApp_Image_2026-10-10_at_7.55.40_PM_1_w5lwe7.jpg',
+    CLOUDINARY + 'v1791633516/WhatsApp_Image_2026-10-10_at_7.55.40_PM_q3hwkv.jpg',
+    CLOUDINARY + 'v1791633517/WhatsApp_Image_2026-10-10_at_7.55.41_PM_xoef0z.jpg',
+    CLOUDINARY + 'v1791633517/WhatsApp_Image_2026-10-10_at_7.55.44_PM_1_yyw0ca.jpg',
+    CLOUDINARY + 'v1791633517/WhatsApp_Image_2026-10-10_at_7.55.44_PM_4_x8kuvq.jpg',
+    CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_7_sfyjwb.jpg',
+    CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_10_p82tyi.jpg',
+  ],
+  letter: {
+    greeting: "Happy birthday, my love,",
+    paragraphs: [
+      "Today the world celebrates the day you arrived in it, and I get to celebrate the girl who made my whole world softer.",
+      "Thank you for every call, every story, every laugh. I hope this year gives you everything you’ve wished for, and that I get to be beside you for all of it.",
+    ],
+    signature: "Forever yours, Afiq ♡"
+  },
+  credits: [
+    { role: "A film by", name: "Afiq" },
+    { role: "Starring", name: VALENTINE_DAY_DATA.profile.name },
+    { role: "Her biggest fan", name: "Also Afiq" },
+    { role: "Filmed on location", name: "Everywhere we’ve been together" },
+    { role: "Catering", name: "Sushi, daging and ayam gepuk" },
+    { role: "Wardrobe", name: "White, cream & pink" },
+    { role: "Special thanks", name: "Every night call" },
+  ],
+};

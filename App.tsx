@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Catalogue from './pages/Catalogue';
 import GirlfriendDay from './pages/GirlfriendDay';
 import ValentinesDay from './pages/ValentinesDay';
+import Birthday from './pages/Birthday';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Catalogue />} />
         <Route path="/girlfriend" element={<GirlfriendDay />} />
         <Route path="/valentine" element={<ValentinesDay />} />
+        <Route path="/birthday" element={<Birthday />} />
       </Routes>
     </HashRouter>
   );

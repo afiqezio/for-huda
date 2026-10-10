@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FloatingHearts from '../components/FloatingHearts';
-import Photo from '../components/Photo';
+import PhotoSlot from '../components/PhotoSlot';
+import { BIRTHDAY_DATA } from '../data/config';
+import { useCountdown } from '../hooks/useCountdown';
 
 interface EventCardProps {
   to: string;
@@ -10,13 +12,31 @@ interface EventCardProps {
   title: string;
   description: string;
   image: string;
-  dark?: boolean;
+  tone?: 'light' | 'dark' | 'gold';
+  cta?: string;
+  sealed?: boolean;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ to, chapter, date, title, description, image, dark = false }) => (
-  <Link to={to} className={`chapter-card${dark ? ' chapter-card--dark' : ''}`}>
-    <div className="chapter-card__photo arch">
-      <Photo src={image} sizes="(min-width: 1080px) 520px, 100vw" priority />
+const EventCard: React.FC<EventCardProps> = ({
+  to,
+  chapter,
+  date,
+  title,
+  description,
+  image,
+  tone = 'light',
+  cta = 'Open chapter →',
+  sealed = false,
+}) => (
+  <Link to={to} className={`chapter-card chapter-card--${tone}`}>
+    <div className={`chapter-card__photo arch${sealed ? ' chapter-card__photo--sealed' : ''}`}>
+      <PhotoSlot src={image} label={`${title} cover`} priority />
+      {sealed && (
+        <div className="chapter-card__seal">
+          <span className="wax-seal">H</span>
+          <span className="eyebrow">Sealed until 21 · 10</span>
+        </div>
+      )}
     </div>
     <div className="chapter-card__body">
       <div className="chapter-card__meta eyebrow">
@@ -25,12 +45,16 @@ const EventCard: React.FC<EventCardProps> = ({ to, chapter, date, title, descrip
       </div>
       <h2 className="chapter-card__title">{title}</h2>
       <p className="chapter-card__text">{description}</p>
-      <span className="chapter-card__cta">Open chapter →</span>
+      <span className="chapter-card__cta">{cta}</span>
     </div>
   </Link>
 );
 
 const Catalogue: React.FC = () => {
+  const countdown = useCountdown(BIRTHDAY_DATA.unlockAt);
+  const { units } = countdown;
+  const unlocked = countdown.reached || BIRTHDAY_DATA.forceUnlock;
+
   return (
     <div className="page page--cream archive">
       <FloatingHearts />
@@ -46,13 +70,33 @@ const Catalogue: React.FC = () => {
         </div>
       </header>
 
+      <section className="countdown-panel">
+        <div className="eyebrow eyebrow--wide">
+          {unlocked ? 'Today is the day' : 'Until her birthday · 21 October'}
+        </div>
+        {unlocked ? (
+          <Link to="/birthday" className="countdown-panel__open script">
+            It’s your day, Huda — open it ♡
+          </Link>
+        ) : (
+          <div className="countdown" role="timer">
+            {units.map((u) => (
+              <div key={u.label} className="countdown__unit">
+                <span className="countdown__value">{u.value}</span>
+                <span className="eyebrow">{u.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
       <main className="archive__grid">
         <EventCard
           to="/girlfriend"
           chapter="Chapter I"
           date="1 August 2025"
           title="National Girlfriend Day"
-          description="A celebration of the girl who makes every day brighter — museum dates, silly laughs, and a letter."
+          description="A celebration of the girl who makes every day brighter, museum dates, silly laughs, and a letter."
           image="https://res.cloudinary.com/dtl72yrin/image/upload/v1771041635/IMG_5613_ku4dro.jpg"
         />
         <EventCard
@@ -62,7 +106,18 @@ const Catalogue: React.FC = () => {
           title="Valentine's Day"
           description="One question, and the library of notes I've been keeping about you."
           image="https://res.cloudinary.com/dtl72yrin/image/upload/v1771044041/IMG_8205_wxqpbb.jpg"
-          dark
+          tone="dark"
+        />
+        <EventCard
+          to="/birthday"
+          chapter={BIRTHDAY_DATA.chapter}
+          date={BIRTHDAY_DATA.date}
+          title="Her Birthday"
+          description="A whole chapter just for the birthday girl, a year of photos, and a letter."
+          image={BIRTHDAY_DATA.coverPhoto}
+          tone="gold"
+          sealed={!unlocked}
+          cta={unlocked ? 'Open chapter →' : `Sealed · ${units[0].value} days to go`}
         />
       </main>
 

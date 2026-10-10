@@ -9,15 +9,15 @@ The system is built with a modern, high-performance frontend stack optimized for
 ### Tech Stack
 - **Framework**: [React 19](https://react.dev/) (Functional components with Hooks).
 - **Build Tool**: [Vite 6](https://vitejs.dev/) for lightning-fast development and optimized production bundling.
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) using a utility-first approach for responsive, custom-themed UI.
+- **Styling**: A single bundled stylesheet (`styles.css`) with the palette defined as CSS variables. No runtime CSS framework.
 - **Routing**: [React Router 7](https://reactrouter.com/) using `HashRouter` to ensure compatibility with GitHub Pages' static hosting.
-- **Icons**: [Lucide React](https://lucide.dev/) for lightweight, consistent iconography.
-- **Typography**: Google Fonts integration (Dancing Script, Playfair Display, Inter).
+- **Typography**: Google Fonts (Cormorant Garamond, Pinyon Script, Manrope).
+- **Images**: Served through Cloudinary with `f_auto,q_auto` and responsive `srcset` widths (see `components/Photo.tsx`).
 
 ### Design Patterns
 - **Centralized Data Configuration**: All text, images, and content are managed in `src/data/config.ts` to separate content from logic.
 - **Component-Based UI**: Reusable components like `FloatingHearts` and `EventCard` ensure visual consistency.
-- **Glassmorphism**: Extensive use of backdrop-blur and translucency for a premium "app-like" feel.
+- **Editorial romance**: Cream and burgundy palette, arched photo frames, polaroids, and a wax-seal letter. Animations are disabled for users who prefer reduced motion.
 
 ## :sparkles: Key Features
 
@@ -27,10 +27,10 @@ A portal acting as a museum-style entry point. Features high-impact cards with h
 ### 2. National Girlfriend Day Page
 - **Polaroid-style Gallery**: Responsive masonry layout with subtle rotations.
 - **Featured Frame**: A spotlight section for the "Favorite Photo."
-- **Interactive Love Letter**: A clean, elegant reading experience.
+- **Sealed Love Letter**: Tap the wax seal to open the letter.
 
 ### 3. Valentine's Day Page
-- **The "Library of Us"**: A scrollable digital journal of relationship milestones.
+- **The "Library of Us"**: Numbered note cards (from `relationshipNotes` in `data/config.ts`) of everything I noticed about her.
 - **Interactive Proposal**: A playful "Will you be my Valentine?" section with a "jumping" No-button that evades touch/clicks on mobile.
 - **Gated Experience**: Content is revealed only after the "Yes" interaction.
 

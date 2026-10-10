@@ -1,43 +1,33 @@
+import React, { useMemo } from 'react';
 
-import React, { useEffect, useState } from 'react';
+const HEART_COUNT = 14;
 
-interface HeartProps {
-  id: number;
-  left: string;
-  delay: string;
-  size: string;
-  duration: string;
-}
-
-const FloatingHearts: React.FC<{ color?: string }> = ({ color = 'text-pink-200' }) => {
-  const [hearts, setHearts] = useState<HeartProps[]>([]);
-
-  useEffect(() => {
-    const newHearts = Array.from({ length: 15 }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 5}s`,
-      size: `${Math.random() * 1.5 + 0.5}rem`,
-      duration: `${Math.random() * 5 + 7}s`,
-    }));
-    setHearts(newHearts);
-  }, []);
+const FloatingHearts: React.FC<{ tone?: 'light' | 'dark' }> = ({ tone = 'light' }) => {
+  const hearts = useMemo(
+    () =>
+      Array.from({ length: HEART_COUNT }, () => ({
+        left: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 8}s`,
+        size: `${10 + Math.random() * 16}px`,
+        duration: `${12 + Math.random() * 8}s`,
+      })),
+    []
+  );
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {hearts.map((heart) => (
-        <div
-          key={heart.id}
-          className={`absolute bottom-[-50px] animate-float ${color} opacity-40`}
+    <div className={`petals petals--${tone}`} aria-hidden="true">
+      {hearts.map((heart, i) => (
+        <span
+          key={i}
           style={{
             left: heart.left,
-            animationDelay: heart.delay,
             fontSize: heart.size,
+            animationDelay: heart.delay,
             animationDuration: heart.duration,
           }}
         >
           ♥
-        </div>
+        </span>
       ))}
     </div>
   );

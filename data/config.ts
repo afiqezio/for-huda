@@ -6,6 +6,8 @@
 export const GIRLFRIEND_DAY_DATA = {
   chapter: "Chapter I",
   date: "1 August 2025",
+  // Midnight Malaysia time (UTC+8). Drives the "New" badge on the home page.
+  releasedAt: Date.parse('2025-08-01T00:00:00+08:00'),
   intro: "Six moments, one favourite frame, and a letter I wrote just for you. Scroll slowly.",
   photos: [
     { src: 'https://res.cloudinary.com/dtl72yrin/image/upload/v1771041633/Disney_v1i0of.jpg', caption: 'Her beautiful smile that lights up my world', rotation: -2 },
@@ -34,6 +36,8 @@ export const GIRLFRIEND_DAY_DATA = {
 export const VALENTINE_DAY_DATA = {
   chapter: "Chapter II",
   date: "14 February 2026",
+  // Midnight Malaysia time (UTC+8). Drives the "New" badge on the home page.
+  releasedAt: Date.parse('2026-02-14T00:00:00+08:00'),
   subTitle: "I love you most",
   songUrl: "https://www.youtube.com/watch?v=qjMLXjTUc8Y",
   profile: {
@@ -194,7 +198,7 @@ export const BIRTHDAY_DATA = {
   forceUnlock: false,
   coverPhoto: CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_6_bgzdp0.jpg',
   openingPhoto: CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_2_we7re0.jpg',
-  tagline: "Cry baby, sushi maniac, Thai girl wannabe and the main character of every single one of my days.",
+  tagline: "One and only cry baby, sushi maniac and the main character of every single one of my days.",
   starPhotos: [
     CLOUDINARY + 'v1791633521/WhatsApp_Image_2026-10-10_at_7.55.45_PM_7_dmmuan.jpg',
     CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_6_bgzdp0.jpg',
@@ -254,12 +258,14 @@ export const BIRTHDAY_DATA = {
     CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_10_p82tyi.jpg',
   ],
   letter: {
-    greeting: "Happy birthday, my love,",
+    greeting: "Happy birthday, my Huda",
     paragraphs: [
-      "Today the world celebrates the day you arrived in it, and I get to celebrate the girl who made my whole world softer.",
-      "Thank you for every call, every story, every laugh. I hope this year gives you everything you’ve wished for, and that I get to be beside you for all of it.",
+      "Happy birthday to the girl who makes my days so much better just by being in them. You honestly have no idea how much happiness you bring into my life. Even on days when everything feels tiring or stressful, talking to you or hearing your voice somehow makes everything feel a little easier. You ada this aura yang brighten my days without even trying, and I hope you know how special that is to me.",
+      "Thank you for being you, sayang. Thank you for all our calls (yes, even the ones yang I selalu tertido hehe), our random conversations, the silly things we laugh about, and all the little moments that might seem ordinary to you but mean so much to me. From our first museum date to every sushi and food date after it, even the simplest things feel special when they’re with you. I’m so grateful to have you in my life, and if there’s one thing I wish for you, it’s that you get to feel as much happiness and calmness as you give me every single day.",
+      "I hope this new chapter of your life brings you lots of happiness, rezeki, good health, and everything you’ve been wishing for. I hope you always have reasons to smile, even on your hardest days. And whenever life gets a little tough, I hope I can be someone you can lean on, someone who makes things feel a little less heavy, just like how you do for me. On the days my cry baby needs a little extra attention, I’ll be right there. I may not always know the perfect things to say, but I’ll keep showing up. I’ll always want to make you feel loved, appreciated, and cared for. I’m really happy I get to celebrate another birthday with you, and I hope I get to celebrate many, many more with you after this.",
+      "I love you so much, sayang. Thank you for coming into my life, for choosing me, and for making it brighter in ways you probably don’t even realise. You make me happy just by being yourself and honestly, that’s more than enough for me. I hope today makes you feel extra loved, because you really deserve all the love in this world. Happy birthday once again, my girl. Let's have fun today and see you at the zoo!"
     ],
-    signature: "Forever yours, Afiq ♡"
+    signature: "Forever yours, Afiq"
   },
   credits: [
     { role: "A film by", name: "Afiq" },

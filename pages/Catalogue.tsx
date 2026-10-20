@@ -2,8 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FloatingHearts from '../components/FloatingHearts';
 import PhotoSlot from '../components/PhotoSlot';
-import { BIRTHDAY_DATA } from '../data/config';
+import { BIRTHDAY_DATA, GIRLFRIEND_DAY_DATA, VALENTINE_DAY_DATA } from '../data/config';
 import { useCountdown } from '../hooks/useCountdown';
+
+const NEW_FOR_DAYS = 7;
+
+// A chapter counts as new from its release until NEW_FOR_DAYS later.
+const isNewRelease = (releasedAt: number, now = Date.now()) =>
+  now >= releasedAt && now < releasedAt + NEW_FOR_DAYS * 864e5;
 
 interface EventCardProps {
   to: string;
@@ -15,6 +21,8 @@ interface EventCardProps {
   tone?: 'light' | 'dark' | 'gold';
   cta?: string;
   sealed?: boolean;
+  // Release time in ms since epoch; the card wears a "New" badge for its first week.
+  releasedAt?: number;
 }
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -27,8 +35,10 @@ const EventCard: React.FC<EventCardProps> = ({
   tone = 'light',
   cta = 'Open chapter →',
   sealed = false,
+  releasedAt,
 }) => (
   <Link to={to} className={`chapter-card chapter-card--${tone}`}>
+    {!sealed && releasedAt !== undefined && isNewRelease(releasedAt) && <span className="chapter-card__new">New</span>}
     <div className={`chapter-card__photo arch${sealed ? ' chapter-card__photo--sealed' : ''}`}>
       <PhotoSlot src={image} label={`${title} cover`} priority />
       {sealed && (
@@ -98,6 +108,7 @@ const Catalogue: React.FC = () => {
           title="National Girlfriend Day"
           description="A celebration of the girl who makes every day brighter, museum dates, silly laughs, and a letter."
           image="https://res.cloudinary.com/dtl72yrin/image/upload/v1771041635/IMG_5613_ku4dro.jpg"
+          releasedAt={GIRLFRIEND_DAY_DATA.releasedAt}
         />
         <EventCard
           to="/valentine"
@@ -107,6 +118,7 @@ const Catalogue: React.FC = () => {
           description="One question, and the library of notes I've been keeping about you."
           image="https://res.cloudinary.com/dtl72yrin/image/upload/v1771044041/IMG_8205_wxqpbb.jpg"
           tone="dark"
+          releasedAt={VALENTINE_DAY_DATA.releasedAt}
         />
         <EventCard
           to="/birthday"
@@ -117,6 +129,7 @@ const Catalogue: React.FC = () => {
           image={BIRTHDAY_DATA.coverPhoto}
           tone="gold"
           sealed={!unlocked}
+          releasedAt={BIRTHDAY_DATA.unlockAt}
           cta={unlocked ? 'Open chapter →' : `Sealed · ${units[0].value} days to go`}
         />
       </main>

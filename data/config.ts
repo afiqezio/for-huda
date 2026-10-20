@@ -195,7 +195,7 @@ export const BIRTHDAY_DATA = {
   // Midnight 21 October in Malaysia (UTC+8), the same instant for every visitor whatever their phone's timezone.
   unlockAt: Date.parse('2026-10-21T00:00:00+08:00'),
   // Development switch: opens the chapter before unlockAt. Keep false on the live site.
-  forceUnlock: false,
+  forceUnlock: true,
   coverPhoto: CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_6_bgzdp0.jpg',
   openingPhoto: CLOUDINARY + 'v1791633518/WhatsApp_Image_2026-10-10_at_7.55.44_PM_2_we7re0.jpg',
   tagline: "One and only cry baby, sushi maniac and the main character of every single one of my days.",
